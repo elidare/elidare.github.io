@@ -5,19 +5,34 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <form name="login_form">
+        <form class="" name="login_form">
             <legend>Welcome</legend>
             <div class="form-row">
                 <label for="login_field">Username</label>
-                <input id="login_field" type="text" name="username" data-qa-id="username_input">
+                <input id="login_field" type="text" name="login" data-qa-id="username_input">
             </div>
             <div class="form-row">
-                <label for="password">Password</label>
-                <input id="password" type="password" name="password" data-qa-id="password_input">
+                <label for="password_field">Password</label>
+                <input id="password_field" type="password" name="password" data-qa-id="password_input">
             </div>
-            <div class="form-row">
+            <div class="form-row submit">
                 <input type="submit" value="Sign in" data-qa-id="submit_button">
+                <div class="error-message" data-qa-id="submit_error">Oops, wrong credentials. Please try again</div>
             </div>
         </form>
     </body>
+    <script type="text/javascript">
+        let form = document.forms.login_form;
+        let signin = function(username, password) {
+            if (username === "hello" && password === "12345") {
+                window.location = "index.html";
+            } else {
+                form.classList.add("error");
+            }
+        }
+        form.addEventListener("submit", function(e) {
+            signin(this.elements.login.value, this.elements.password.value);
+            event.preventDefault();
+        });
+    </script>
 </html>
