@@ -4,7 +4,7 @@ Library    Browser
 
 *** Variables ***
 
-${URL} =    https://elidare.github.io/exploring_robot
+${URL} =    https://elidare.github.io/page_under_test
 ${LOCATOR_USERNAME} =   [data-qa-id="username_input"]
 ${LOCATOR_PASSWORD} =   [data-qa-id="password_input"]
 ${LOCATOR_SUBMIT} =   [data-qa-id="submit_button"]
