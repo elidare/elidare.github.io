@@ -5,7 +5,7 @@ Library    SeleniumLibrary
 
 *** Variables ***
 
-${BROWSER} =   %{browser}
+${BROWSER} =   chrome
 ${URL} =    https://elidare.github.io/page_under_test
 ${LOCATOR_USERNAME} =   data:qa-id:username_input
 ${LOCATOR_PASSWORD} =   data:qa-id:password_input
