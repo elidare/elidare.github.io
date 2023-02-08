@@ -52,7 +52,8 @@ Do Successful Logout
 
 Verify That Index Page Is Visible
     Wait Until Page Contains    Logout
-    Location Should Be    ${URL}/index.html
+    #Location Should Be    ${URL}/index.html
+    Location Should Be    ${URL}/index_1.html    # Xfail
 
 Verify That Login Page Is Visible
     Wait Until Page Contains    Welcome
