@@ -1,0 +1,9 @@
+venv/
+browser/
+reports/
+
+# robot
+log.html
+output.xml
+report.html
+playwright-log.txt

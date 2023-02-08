@@ -1,0 +1,41 @@
+name: UI tests with Robot framework
+
+on:
+#  push:
+#    branches: [ "main" ]
+#  pull_request:
+
+# As I have the deploy from branch and the previous build-and-deploy workflow is runningin parallel,
+# I would prefer to run tests manually after the build is completed
+# This is a FIXME
+  workflow_dispatch:
+
+jobs:
+  run_test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run tests
+      uses: joonvena/robotframework-docker-action@v1.0
+      with:
+        robot_tests_dir: ui_test_robot
+    - name: Upload test report
+      uses: actions/upload-artifact@v1
+      if: always()
+      with:
+        name: reports
+        path: reports
+
+  generate_report:
+    runs-on: ubuntu-latest
+    needs: [run_test]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Download test report
+      uses: actions/download-artifact@v1
+      with:
+        name: reports
+    - name: Output report
+      uses: joonvena/robotframework-reporter-action@v2
+      with:
+        gh_access_token: ${{ secrets.GITHUB_TOKEN }}
