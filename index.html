@@ -5,12 +5,25 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <ul>
-            <li>
-                <p>A page with forms and stuff to test it by robotframework
-                    <a href="page_under_test/login.html">click here</a>
-                </p>
-            </li>
-        </ul>
+        <div class="wrapper">
+            <div class="header">
+                <h1>elidare.github.io</h1>
+                Welcome!<br><br>I am Elena (sounds close to <i>ye-LE-nah</i>) and I am a Quality Assurance Engineer.<br>
+                I use GH pages to try things.
+            </div>
+            <div class="content">
+                <p>Here are some of the projects I want to be stored and available:</p>
+                <ol>
+                    <li class="wip">
+                            I am exploring the autotesting with the Robot Framework,
+                            so <a href="page_under_test/login.html" target="_blank">here</a> is
+                            a simple set of pages with different HTML elements to test it.<br>
+                            Autotests for these pages are <a href="https://github.com/elidare/elidare.github.io/tree/main/ui_test_robot" target="_blank">here</a>
+                            and one can easily run them by clicking <strong>Run workflow</strong>
+                            from <a href="https://github.com/elidare/elidare.github.io/actions/workflows/test.yaml" target="_blank">workflows</a>.
+                    </li>
+                </ol>
+            </div>
+        </div>
     </body>
 </html>
