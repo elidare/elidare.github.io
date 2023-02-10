@@ -12,8 +12,10 @@ body {
 }
 
 .wrapper {
-    width: 1024px;
     margin: 36px auto;
+    padding: 0 20px;
+    min-width: 600px;
+    max-width: 1024px;
 }
 
 .header {
@@ -29,28 +31,28 @@ body {
     margin: 0;
 }
 
-.content ol,
+.content ul,
 .content li {
     margin: 0;
+    padding: 0;
 }
 
 .content li {
     margin-top: 12px;
+    list-style-type: "- ";
+    list-style-position: inside;
 }
 
 li.wip {
-    position: relative;
+    list-style-type: none;
 }
 
 li.wip:before {
-    top: -4px;
-    right: 100%;
     color: #00ff28;
     border: 1px solid #00ff28;
     padding: 4px 8px;
     content: "WIP";
-    position: absolute;
-    transform: translate(-100%, 0%);
+    margin-right: 12px;
 }
 
 .content a {
