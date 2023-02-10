@@ -1,0 +1,66 @@
+html {
+    height: 100%;
+    background: #002a44;
+}
+
+body {
+    color: #dbdbdb;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5em;
+    font-family: Courier;
+}
+
+.wrapper {
+    margin: 36px auto;
+    padding: 0 20px;
+    min-width: 600px;
+    max-width: 1024px;
+}
+
+.header {
+    border-bottom: 1px dashed #dbdbdb;
+    padding-bottom: 24px;
+}
+
+.content {
+    margin-top: 24px;
+}
+
+.content p {
+    margin: 0;
+}
+
+.content ul,
+.content li {
+    margin: 0;
+    padding: 0;
+}
+
+.content li {
+    margin-top: 12px;
+    list-style-type: "- ";
+    list-style-position: inside;
+}
+
+li.wip {
+    list-style-type: none;
+}
+
+li.wip:before {
+    color: #00ff28;
+    border: 1px solid #00ff28;
+    padding: 4px 8px;
+    content: "WIP";
+    margin-right: 12px;
+}
+
+.content a {
+    color: #dbdbdb;
+    border-bottom: 2px dashed #dbdbdb;
+    text-decoration: none;
+}
+
+.content a:hover {
+    border-bottom-style: solid;
+}
