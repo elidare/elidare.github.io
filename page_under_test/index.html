@@ -3,6 +3,12 @@
         <meta charset="utf-8">
         <title>Just a page to open</title>
         <link rel="stylesheet" href="styles.css">
+        <script src="main_page.js"></script>
+        <style>
+            html {
+                height: 100%;
+            }
+        </style>
     </head>
     <body>
         <nav>
@@ -26,5 +32,15 @@
                 <li class="logout"><a href="login.html" data-qa-id="logout_button">Logout</a></li>
             </ul>
         </nav>
+        <div class="promo-block immediate hidden">
+            This is a block that appears some time after page loading.
+            It has display: none at the start.
+        </div>
+        <div class="promo-block not-immediate hidden">
+            This is a block that appears some time after page loading.
+            It has visibility: hidden; opacity: 0 at the start.
+        </div>
+        <div id="page_1_1">Some content for page_1_2 - check the location, check that this element is scrolled to</div>
+        <div id="page_2">Some content for page_2</div>
     </body>
 </html>
