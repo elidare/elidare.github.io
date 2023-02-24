@@ -5,6 +5,26 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <p><a href="login.html" data-qa-id="logout_button">Logout</a></p>
+        <nav>
+            <ul>
+                <li>
+                    Page 1
+                    <ul class="dropdown">
+                        <li>Subpage 1-1</li>
+                        <li><a href="#page_1_2">Subpage 1-2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#page_2">Page 2</a></li>
+                <li>Page 3</li>
+                <li>
+                    Page 4
+                    <ul class="dropdown">
+                        <li>Subpage 4-1</li>
+                        <li>Subpage 4-2</li>
+                    </ul>
+                </li>
+                <li class="logout"><a href="login.html" data-qa-id="logout_button">Logout</a></li>
+            </ul>
+        </nav>
     </body>
 </html>

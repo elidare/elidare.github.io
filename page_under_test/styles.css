@@ -6,6 +6,7 @@ html {
 
 body {
     color: #384047;
+    margin: 0;
     font-size: 16px;
 }
 
@@ -74,4 +75,56 @@ label {
 
 form.error .error-message {
     visibility: visible;
+}
+
+nav ul {
+    color:#f4f7f8;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: #252b30;
+}
+
+nav > ul {
+    height: 40px;
+}
+
+nav li {
+    cursor: pointer;
+}
+
+nav li:hover {
+    background-color: #4a5762;
+}
+
+nav > ul > li {
+    float: left;
+    margin: 0;
+    height: 32px;
+    padding: 4px 12px;
+    position: relative;
+    line-height: 32px;
+    border-right: 1px solid #00c441;
+}
+
+nav a {
+    color: inherit;
+    display: block;
+    text-decoration: none;
+}
+
+nav > ul > li:hover ul.dropdown {
+    display: block;
+}
+
+ul.dropdown {
+    top: 100%;
+    left: 0;
+    display: none;
+    position: absolute;
+}
+
+ul.dropdown li {
+    padding: 4px 12px;
+    white-space: nowrap;
 }
