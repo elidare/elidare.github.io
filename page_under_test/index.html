@@ -4,11 +4,6 @@
         <title>Just a page to open</title>
         <link rel="stylesheet" href="styles.css">
         <script src="main_page.js"></script>
-        <style>
-            html {
-                height: 100%;
-            }
-        </style>
     </head>
     <body>
         <nav>
@@ -40,7 +35,13 @@
             This is a block that appears some time after page loading.
             It has visibility: hidden; opacity: 0 at the start.
         </div>
-        <div id="page_1_1">Some content for page_1_2 - check the location, check that this element is scrolled to</div>
-        <div id="page_2">Some content for page_2</div>
+        <!-- An element, that add a comment via opening the textarea -->
+        <!-- some element that is closing in 500 ms - wait until not shown -->
+        <div id="page_1_2" class="page">
+            Some content for page_1_2 to check the location and autoscroll, <a href="#">back to top</a>
+        </div>
+        <div id="page_2" class="page">
+            Some content for page_2 to check the location and autoscroll, <a href="#">back to top</a>
+        </div>
     </body>
 </html>
