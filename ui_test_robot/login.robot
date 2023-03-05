@@ -1,60 +1,53 @@
 *** Settings ***
 
-Test Teardown    Close Browser
 Library    SeleniumLibrary
+Resource   common.resource
+Test Setup    Open Browser To Login Page
+Test Teardown    Close Browser
+Test Template   Error Block Is Visible When Using Incorrect Credentials
 
 *** Variables ***
 
-${BROWSER} =   chrome
-${URL} =    https://elidare.github.io/page_under_test
-${LOCATOR_USERNAME} =   data:qa-id:username_input
-${LOCATOR_PASSWORD} =   data:qa-id:password_input
-${LOCATOR_SUBMIT} =   data:qa-id:submit_button
-${LOCATOR_LOGOUT} =   data:qa-id:logout_button
 ${USERNAME} =   hello
 ${PASSWORD} =   12345
 
 *** Test Cases ***
 
 Index Page Should Be Visible After Successful Login
-    [Setup]    Do Successful Login
+    [Template]    None
+    Do Successful Login    ${USERNAME}    ${PASSWORD}
     Verify That Index Page Is Visible
 
 Login Form Should Be Visible After Successful Logout
-    [Setup]    Do Successful Login
+    [Template]    None
+    Do Successful Login    ${USERNAME}    ${PASSWORD}
     Do Successful Logout
     Verify That Login Page Is Visible
 
+Empty login Empty password    ${EMPTY}    ${EMPTY}
+Empty login Correct password    ${EMPTY}    ${PASSWORD}
+Correct login Empty password    ${USERNAME}    ${EMPTY}
+Correct login Incorrect password    ${USERNAME}    adsads
+Incorrect login Correct password    adsads    ${PASSWORD}
+
 *** Keywords ***
-
-Open Browser To Login Page
-    Open Browser    ${URL}/login.html    ${BROWSER}
-
-Enter Username
-    [Arguments]    ${username}
-    Input Text   ${LOCATOR_USERNAME}   ${username}
-
-Enter Password
-    [Arguments]    ${password}
-    Input Password  ${LOCATOR_PASSWORD}   ${password}
-
-Submit Login Form
-    Click button   ${LOCATOR_SUBMIT}
-
-Do Successful Login
-    Open Browser To Login Page
-    Enter Username  ${USERNAME}
-    Enter Password  ${PASSWORD}
-    Submit Login Form
-
-Do Successful Logout
-    Click Element   ${LOCATOR_LOGOUT}
 
 Verify That Index Page Is Visible
     Wait Until Page Contains    Logout
-    #Location Should Be    ${URL}/index.html
     Location Should Be    ${URL}/index.html
+    # Get Title to check it
 
 Verify That Login Page Is Visible
     Wait Until Page Contains    Welcome
     Location Should Be    ${URL}/login.html
+    # Get Title to check it
+
+Verify That Error Block Is Visible
+    Element Should Be Visible    ${LOCATOR_ERROR}
+
+Error Block Is Visible When Using Incorrect Credentials
+    [Arguments]    ${username}    ${password}
+    Enter Username  ${username}
+    Enter Password  ${password}
+    Submit Login Form
+    Verify That Error Block Is Visible
