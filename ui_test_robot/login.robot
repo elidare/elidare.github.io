@@ -35,12 +35,12 @@ Negative: Incorrect login Correct password    adsads    ${PASSWORD}
 Verify That Index Page Is Visible
     Wait Until Page Contains    Logout
     Location Should Be    ${URL}/index.html
-    # Get Title to check it
+    Title Should Be    A page with content
 
 Verify That Login Page Is Visible
     Wait Until Page Contains    Welcome
     Location Should Be    ${URL}/login.html
-    # Get Title to check it
+    Title Should Be    Just a page to open
 
 Verify That Error Block Is Visible
     Element Should Be Visible    ${LOCATOR_ERROR}
