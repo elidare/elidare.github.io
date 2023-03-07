@@ -24,11 +24,11 @@ Login Form Should Be Visible After Successful Logout
     Do Successful Logout
     Verify That Login Page Is Visible
 
-Empty login Empty password    ${EMPTY}    ${EMPTY}
-Empty login Correct password    ${EMPTY}    ${PASSWORD}
-Correct login Empty password    ${USERNAME}    ${EMPTY}
-Correct login Incorrect password    ${USERNAME}    adsads
-Incorrect login Correct password    adsads    ${PASSWORD}
+Negative: Empty login Empty password    ${EMPTY}    ${EMPTY}
+Negative: Empty login Correct password    ${EMPTY}    ${PASSWORD}
+Negative: Correct login Empty password    ${USERNAME}    ${EMPTY}
+Negative: Correct login Incorrect password    ${USERNAME}    adsads
+Negative: Incorrect login Correct password    adsads    ${PASSWORD}
 
 *** Keywords ***
 
