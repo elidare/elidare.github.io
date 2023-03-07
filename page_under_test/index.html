@@ -1,10 +1,47 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Just a page to open</title>
+        <title>A page with content</title>
         <link rel="stylesheet" href="styles.css">
+        <script src="main_page.js"></script>
     </head>
     <body>
-        <p><a href="login.html" data-qa-id="logout_button">Logout</a></p>
+        <nav>
+            <ul>
+                <li>
+                    Page 1
+                    <ul class="dropdown">
+                        <li>Subpage 1-1</li>
+                        <li><a href="#page_1_2">Subpage 1-2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#page_2">Page 2</a></li>
+                <li>Page 3</li>
+                <li>
+                    Page 4
+                    <ul class="dropdown">
+                        <li>Subpage 4-1</li>
+                        <li>Subpage 4-2</li>
+                    </ul>
+                </li>
+                <li class="logout"><a href="login.html" data-qa-id="logout_button">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="promo-block immediate hidden">
+            This is a block that appears some time after page loading.
+            It has display: none at the start.
+        </div>
+        <div class="promo-block not-immediate hidden">
+            This is a block that appears some time after page loading.
+            It has visibility: hidden; opacity: 0 at the start.
+        </div>
+        <!-- An element, that add a comment via opening the textarea -->
+        <!-- some element that is closing in 500 ms - wait until not shown -->
+        <div id="page_1_2" class="page">
+            Some content for page_1_2 to check the location and autoscroll, <a href="#">back to top</a>
+        </div>
+        <div id="page_2" class="page">
+            Some content for page_2 to check the location and autoscroll, <a href="#">back to top</a>
+        </div>
     </body>
 </html>
