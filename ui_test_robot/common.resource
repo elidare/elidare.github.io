@@ -16,6 +16,9 @@ ${URL} =    https://elidare.github.io/page_under_test
 Open Browser To Login Page
     Open Browser    ${URL}/login.html    ${BROWSER}
 
+Open Browser To Index Page
+    Open Browser    ${URL}/index.html    ${BROWSER}
+
 Enter Username
     [Arguments]    ${username}
     Input Text   ${LOCATOR_USERNAME}   ${username}
