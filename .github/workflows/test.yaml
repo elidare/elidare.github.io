@@ -24,7 +24,7 @@ jobs:
       if: always()
       with:
         name: reports
-        path: reports
+        path: reports/output.xml
 
   generate_report:
     runs-on: ubuntu-latest
