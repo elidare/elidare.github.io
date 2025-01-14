@@ -20,7 +20,7 @@ jobs:
       with:
         robot_tests_dir: ui_test_robot
     - name: Upload test report
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: reports
@@ -32,7 +32,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Download test report
-      uses: actions/download-artifact@v1
+      uses: actions/download-artifact@v4
       with:
         name: reports
     - name: Output report
