@@ -19,6 +19,8 @@ jobs:
       uses: joonvena/robotframework-docker-action@v1.0
       with:
         robot_tests_dir: ui_test_robot
+        output_dir: reports
+        extra_options: "--timestampoutputs"
     - name: Upload test report
       uses: actions/upload-artifact@v4
       if: always()
