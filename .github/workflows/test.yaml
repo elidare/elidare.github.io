@@ -25,8 +25,8 @@ jobs:
       with:
         name: reports
         path: reports/output.xml
-    - name: Check if test report exists
-      run: ls -R reports
+    - name: Check contents of output.xml
+      run: cat reports/output.xml || echo "No output.xml found"
 
   generate_report:
     runs-on: ubuntu-latest
