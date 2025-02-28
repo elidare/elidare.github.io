@@ -40,6 +40,9 @@ jobs:
       with:
         name: reports
         path: reports
+    - name: Convert timestamps
+      run: |
+          sed -i -E 's/generated="([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2})\.[0-9]+"/generated="\1\2\3 \4:\5:\6,000"/g' reports/output.xml
     - name: Output report
       uses: joonvena/robotframework-reporter-action@v2
       with:
