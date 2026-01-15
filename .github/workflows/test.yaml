@@ -1,49 +1,49 @@
 name: UI tests with Robot framework
 
 on:
-#  push:
-#    branches: [ "main" ]
-#  pull_request:
+  #  push:
+  #    branches: [ "main" ]
+  #  pull_request:
 
-# As I have the deploy from branch and the previous build-and-deploy workflow is running in parallel,
-# I would prefer to run tests manually after the build is completed
-# This is a FIXME
+  # As I have the deploy from branch and the previous build-and-deploy workflow is running in parallel,
+  # I would prefer to run tests manually after the build is completed
+  # This is a FIXME
   workflow_dispatch:
 
 jobs:
   run_test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Run tests
-      uses: joonvena/robotframework-docker-action@v1.0
-      with:
-        robot_tests_dir: ui_test_robot
-        output_dir: reports
-    - name: Upload test report
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: reports
-        path: reports/output.xml
-    - name: Check contents of output.xml
-      run: cat reports/output.xml || echo "No output.xml found"
+      - uses: actions/checkout@v3
+      - name: Run tests
+        uses: joonvena/robotframework-docker-action@v1.0
+        with:
+          robot_tests_dir: ui_test_robot
+          output_dir: reports
+      - name: Upload test report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reports
+          path: reports/output.xml
+      - name: Check contents of output.xml
+        run: cat reports/output.xml || echo "No output.xml found"
 
   generate_report:
     runs-on: ubuntu-latest
     needs: [run_test]
     steps:
-    - uses: actions/checkout@v3
-    - name: Download test report
-      uses: actions/download-artifact@v4
-      with:
-        name: reports
-        path: reports
-    - name: Check for empty timestamps
-      run: grep -oP '<msg time=""' reports/output.xml || echo "No empty timestamps found"
-    - name: Check for empty status timestamps
-      run: grep -oP '<status status="[^"]+" start=""' reports/output.xml || echo "No empty status timestamps found"
-    - name: Output report
-      uses: joonvena/robotframework-reporter-action@v2
-      with:
-        gh_access_token: ${{ secrets.WORKFLOW_TOKEN }}
+      - uses: actions/checkout@v3
+      - name: Download test report
+        uses: actions/download-artifact@v4
+        with:
+          name: reports
+          path: reports
+      - name: Check for empty timestamps
+        run: grep -oP '<msg time=""' reports/output.xml || echo "No empty timestamps found"
+      - name: Check for empty status timestamps
+        run: grep -oP '<status status="[^"]+" start=""' reports/output.xml || echo "No empty status timestamps found"
+      - name: Output report
+        uses: joonvena/robotframework-reporter-action@v2
+        with:
+          gh_access_token: ${{ secrets.WORKFLOW_TOKEN }}
