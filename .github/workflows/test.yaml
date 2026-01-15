@@ -44,6 +44,6 @@ jobs:
       - name: Check for empty status timestamps
         run: grep -oP '<status status="[^"]+" start=""' reports/output.xml || echo "No empty status timestamps found"
       - name: Output report
-        uses: joonvena/robotframework-reporter-action@v2
+        uses: joonvena/robotframework-reporter-action@v2.5
         with:
           gh_access_token: ${{ secrets.WORKFLOW_TOKEN }}
