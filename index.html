@@ -1,28 +1,111 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Playground for everything. Everything is possible.</title>
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
-        <div class="wrapper">
-            <div class="header">
-                <h1>elidare.github.io</h1>
-                Welcome!<br><br>I am Elena (sounds close to <i>ye-LE-nah</i>) and I am a Quality Assurance Engineer.<br>
-                I use GH pages to try things.
+  <head>
+    <meta charset="utf-8" />
+    <title>Elena Tishkovskaya, QA</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <img
+          src="img/profile-picture.jpg"
+          alt="Elena Tishkovskaya"
+          class="profile-picture"
+        />
+
+        <div class="header-content">
+          <h1>Elena Tishkovskaya</h1>
+          <p class="job-title">Quality Assurance Specialist | Test Engineer</p>
+
+          <div class="header-details">
+            <div>
+              <i class="fas fa-graduation-cap"></i>Master of Science
+              (Technology),<br />Lappeenranta-Lahti University of Technology LUT
             </div>
-            <div class="content">
-                <p>Here are some of the projects I want to be stored and available:</p>
-                <ul>
-                    <li class="wip">I am exploring the autotesting with the Robot Framework,
-                        so <a href="page_under_test/login.html" target="_blank">here</a> is
-                        a simple set of pages with different HTML elements to test it.<br>
-                        Autotests for these pages are <a href="https://github.com/elidare/elidare.github.io/tree/main/ui_test_robot" target="_blank">here</a>
-                        and one can easily run them on the main branch by clicking <strong>Run workflow</strong>
-                        from <a href="https://github.com/elidare/elidare.github.io/actions/workflows/test.yaml" target="_blank">workflows</a>.
-                    </li>
-                </ul>
-            </div>
+
+            <div><i class="fas fa-map-marker-alt"></i>Turku, Finland</div>
+          </div>
+
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/elena-tishkovskaya/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+
+            <a
+              href="https://github.com/elidare"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
         </div>
-    </body>
+      </div>
+      <div class="content">
+        <h2>Projects</h2>
+
+        <ul class="projects-grid">
+          <li>
+            <img
+              src="img/page_under_test.png"
+              alt="Robot Framework project"
+              class="project-image"
+            />
+            <p>
+              A small example of using Robot Framework. The
+              <a href="page_under_test/login.html" target="_blank">test page</a>
+              contains different HTML elements, and the
+              <a
+                href="https://github.com/elidare/elidare.github.io/tree/main/ui_test_robot"
+                target="_blank"
+                >test cases</a
+              >
+              are available on GitHub. They can be run from the main branch by
+              clicking
+              <strong>Run workflow</strong> in
+              <a
+                href="https://github.com/elidare/elidare.github.io/actions/workflows/test.yaml"
+                target="_blank"
+                >GitHub Actions</a
+              >.<br /><b>Stack:</b> Robot Framework, HTML, CSS, Javascript,
+              GitHub Actions
+            </p>
+          </li>
+
+          <li>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube-nocookie.com/embed/64cfBb1CMNQ?si=wo9HdBwcrHvWHzrM"
+              title="YouTube video player"
+              frameborder="0"
+              allow="encrypted-media"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <p>
+              <b>Satu goes to Harbour</b><br />A game made with Unity,
+              <a href="https://github.com/elidare/satu" target="_blank"
+                >GitHub link</a
+              >. Made for the master's Game development course in LUT
+              university, in 2025. <br /><b>Stack:</b> C#, Unity
+            </p>
+          </li>
+          <!-- <li><p>Holistic</p></li> -->
+          <!-- <li><p>F1</p></li> -->
+          <!-- <li><p>Databases</p></li> -->
+          <!-- <li><p>Databases group work</p></li> -->
+          <!-- <li><p>Advent of Code</p></li> -->
+        </ul>
+      </div>
+    </div>
+  </body>
 </html>
