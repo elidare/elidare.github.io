@@ -1,10 +1,16 @@
+:root {
+  /* Colors */
+  --color-text: #dbdbdb;
+  --color-link-hover: #00ff28;
+}
+
 html {
   height: 100%;
   background: #002a44;
 }
 
 body {
-  color: #dbdbdb;
+  color: var(--color-text);
   margin: 0;
   font-size: 18px;
   line-height: 1.5em;
@@ -19,7 +25,7 @@ body {
 }
 
 .header {
-  border-bottom: 1px dashed #dbdbdb;
+  border-bottom: 1px dashed var(--color-text);
   display: flex;
   align-items: center;
   gap: 30px;
@@ -36,7 +42,7 @@ body {
 
 .header-content h1 {
   margin: 0 0 8px;
-  color: #00ff28;
+  color: var(--color-link-hover);
 }
 
 .job-title {
@@ -72,7 +78,7 @@ body {
 
 .social-links a:hover {
   text-decoration: underline;
-  color: #00ff28;
+  color: var(--color-link-hover);
 }
 
 .content {
@@ -90,19 +96,6 @@ body {
 .projects-grid li {
   border: 1px solid white;
   padding: 20px;
-  /* border-radius: 5px; */
-}
-
-.projects-grid li.wip {
-  list-style-type: none;
-}
-
-.projects-grid li.wip:before {
-  color: #00ff28;
-  border: 1px solid #00ff28;
-  padding: 4px 8px;
-  content: "WIP";
-  margin-right: 12px;
 }
 
 .project-image {
@@ -118,13 +111,14 @@ body {
 }
 
 .content a {
-  color: #dbdbdb;
-  border-bottom: 2px dashed #dbdbdb;
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-text);
   text-decoration: none;
 }
 
 .content a:hover {
-  border-bottom-style: solid;
+  color: var(--color-link-hover);
+  border-color: var(--color-link-hover);
 }
 
 @media (max-width: 600px) {
