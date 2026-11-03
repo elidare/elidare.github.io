@@ -81,6 +81,12 @@ body {
   color: var(--color-link-hover);
 }
 
+.codewars-badge {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+}
+
 .content {
   padding-bottom: 24px;
 }
