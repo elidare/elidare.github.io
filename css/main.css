@@ -91,6 +91,12 @@ body {
   padding-bottom: 24px;
 }
 
+.bullet-points {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
